@@ -36,7 +36,7 @@ let
             pkgs.chromiumDev
             pkgs.skype
 
-            pkgs.pulseaudio
+            pkgs.pulseaudioFull
             pkgs.pavucontrol
 
             pkgs.mplayer
