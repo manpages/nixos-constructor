@@ -8,18 +8,21 @@
     [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix>
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_hcd" "ehci_pci" "ahci" "usb_storage" ];
+  boot.initrd.availableKernelModules = [ "xhci_hcd" "ehci_pci" "ahci" "usbhid" "usb_storage" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/3f615bed-a80c-49de-93ca-5b3f0a24f046";
+    { device = "/dev/disk/by-uuid/be6c9812-e517-462d-80ee-1029646e7065";
       fsType = "ext4";
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/2f3737cf-d861-4c7a-aa8b-3b9d8318be95"; }
-    ];
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-uuid/d8f39818-178b-44d2-9cca-474820bd7012";
+      fsType = "ext4";
+    };
+
+  swapDevices = [ ];
 
   nix.maxJobs = 8;
 }
