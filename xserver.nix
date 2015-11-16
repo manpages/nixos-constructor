@@ -46,7 +46,7 @@ let
             pkgs.rxvt_unicode_with-plugins
             pkgs.urxvt_perls
 
-            blender
+            pkgs.blender
             pkgs.inkscape
             pkgs.gimp
             kdenliveWrapped
