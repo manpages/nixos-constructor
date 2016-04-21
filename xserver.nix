@@ -26,13 +26,7 @@ let
       palmDetect = true;
     };
 
-  kdenliveWrapped = pkgs.kde4.wrapper pkgs.kde4.kdenlive;
-
-  blender = pkgs.stdenv.lib.overrideDerivation pkgs.blender (oldAttrs: {
-	  cudaSupport = true;
-  });
-
-  utils = [ pkgs.firefoxWrapper
+  utils = [ pkgs.firefox
             pkgs.chromiumDev
             pkgs.skype
 
@@ -49,7 +43,6 @@ let
             pkgs.blender
             pkgs.inkscape
             pkgs.gimp
-            kdenliveWrapped
 
             pkgs.autocutsel
             pkgs.clipit
@@ -65,16 +58,10 @@ let
             pkgs.wireshark-gtk
           ];
 
-  fonts = [ pkgs.cantarell_fonts
+  fonts = [ 
             pkgs.corefonts
-            pkgs.dejavu_fonts
-            pkgs.dina-font
-            pkgs.dosemu_fonts
             pkgs.freefont_ttf
             pkgs.terminus_font
-            pkgs.gyre-fonts
-            pkgs.lohit-fonts
-            pkgs.proggyfonts
             pkgs.ubuntu_font_family
           ];
 
